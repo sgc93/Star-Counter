@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:repo_star_counter/widgets/star_counter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -61,7 +62,7 @@ class _HomePageState extends State<HomePage> {
   Widget _numOfStar() {
     return Padding(
       padding: const EdgeInsets.all(32.0),
-      child: Text(_repoName),
+      child: StarCounter(repoName: _repoName),
     );
   }
 }
