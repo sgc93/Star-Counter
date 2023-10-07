@@ -11,7 +11,7 @@ class StarCounterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'GitHub Repo Star counter WebApp',
+      title: 'Repo Star Counter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
