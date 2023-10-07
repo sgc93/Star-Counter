@@ -15,9 +15,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: SizedBox(
+        child: Card(
+          child: Container(
+            padding: const EdgeInsets.all(16.0),
             width: 400,
             child: Column(
               mainAxisSize: MainAxisSize.min,
