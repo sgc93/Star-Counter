@@ -53,11 +53,18 @@ class _StarCounterState extends State<StarCounter> {
       errorMessage = null;
     });
 
-    if (widget.repoName.isNotEmpty) {
-      var repo = await gitHub.repositories
-          .getRepository(RepositorySlug.full(widget.repoName));
+    try {
+      if (widget.repoName.isNotEmpty) {
+        var repo = await gitHub.repositories
+            .getRepository(RepositorySlug.full(widget.repoName));
+        setState(() {
+          repository = repo;
+        });
+      }
+    } on RepositoryNotFound {
       setState(() {
-        repository = repo;
+        repository = null;
+        errorMessage = '${widget.repoName} not found.';
       });
     }
   }
