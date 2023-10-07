@@ -10,6 +10,27 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _appTitle(),
+              _repoNameField(),
+              _numOfStar(),
+            ],
+          ),
+        ),
+      ),
+    );
   }
+
+  _appTitle() {}
+
+  _repoNameField() {}
+
+  _numOfStar() {}
 }
