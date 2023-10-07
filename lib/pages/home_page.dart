@@ -34,7 +34,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _appTitle() {
-    return const Text('GitHub Repo Star Counter');
+    return Text(
+      'GitHub Repo Star Counter',
+      style: Theme.of(context).textTheme.headlineMedium,
+    );
   }
 
   Widget _repoNameField() {
