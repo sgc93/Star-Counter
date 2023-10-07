@@ -19,8 +19,6 @@ class _HomePageState extends State<HomePage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               _appTitle(),
-              _repoNameField(),
-              _numOfStar(),
             ],
           ),
         ),
@@ -28,7 +26,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _appTitle() {}
+  Widget _appTitle() {
+    return const Text('GitHub Repo Star Counter');
+  }
 
   _repoNameField() {}
 
