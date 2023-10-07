@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 _appTitle(),
                 _repoNameField(),
+                _numOfStar(),
               ],
             ),
           ),
@@ -50,9 +51,14 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _numOfStar() {}
-
   void onRepoNameSubmitted(String repoName) {
     _repoName = repoName;
+  }
+
+  Widget _numOfStar() {
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Text(_repoName),
+    );
   }
 }
