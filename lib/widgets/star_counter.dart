@@ -33,6 +33,19 @@ class _StarCounterState extends State<StarCounter> {
     _fetchRepository();
   }
 
+  @override
+  void didUpdateWidget(StarCounter oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    // When this widget's [repoName] changes,
+    // load the Repository information.
+    if (widget.repoName == oldWidget.repoName) {
+      return;
+    }
+
+    _fetchRepository();
+  }
+
   Future<void> _fetchRepository() async {
     setState(() {
       repository = null;
