@@ -30,9 +30,15 @@ class _StarCounterState extends State<StarCounter> {
   void initState() {
     super.initState();
     gitHub = GitHub();
+    _fetchRepository();
   }
 
   Future<void> _fetchRepository() async {
+    setState(() {
+      repository = null;
+      errorMessage = null;
+    });
+
     if (widget.repoName.isNotEmpty) {
       var repo = await gitHub.repositories
           .getRepository(RepositorySlug.full(widget.repoName));
@@ -44,6 +50,17 @@ class _StarCounterState extends State<StarCounter> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    if (errorMessage != null) {
+      // If there is an error
+      return Text(errorMessage!);
+    } else if (widget.repoName.isNotEmpty && repository == null) {
+      // if no reason but internet
+      return const Text('loading ...');
+    } else if (repository == null) {
+      // if no repo name is entered
+      return const SizedBox();
+    } else {
+      return Text(repository!.stargazersCount.toString());
+    }
   }
 }
