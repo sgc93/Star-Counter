@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github/github.dart';
+import 'package:intl/intl.dart' as intl;
 
 class StarCounter extends StatefulWidget {
   // full repository name : pp_name/repo_name
@@ -63,9 +64,17 @@ class _StarCounterState extends State<StarCounter> {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final textStyle = textTheme.bodyLarge!.apply(color: Colors.green);
+    final errorStyle = textTheme.bodySmall!.apply(color: Colors.red);
+    final numberFormater = intl.NumberFormat.decimalPattern();
+
     if (errorMessage != null) {
       // If there is an error
-      return Text(errorMessage!);
+      return Text(
+        errorMessage!,
+        style: errorStyle,
+      );
     } else if (widget.repoName.isNotEmpty && repository == null) {
       // if no reason but internet
       return const Text('loading ...');
@@ -73,7 +82,10 @@ class _StarCounterState extends State<StarCounter> {
       // if no repo name is entered
       return const SizedBox();
     } else {
-      return Text(repository!.stargazersCount.toString());
+      return Text(
+        numberFormater.format(repository!.stargazersCount),
+        style: textStyle,
+      );
     }
   }
 }
