@@ -1,16 +1,8 @@
-# repo_star_counter
+# Repo's Star Counter Web App
 
-A new Flutter project.
+This Flutter web application allows you to easily check the number of stars for any GitHub repository. Whether you're interested in your own repositories or those of others, this web app provides a user-friendly way to get that information.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+https://github.com/sgc93/Star-Counter/assets/109880887/242e998b-1b91-4236-80e3-71ea79e8cd1f
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+inspired by:- fllutter codelab [Using a plugin with a flutter web app](https://codelabs.developers.google.com/codelabs/web-url-launcher#0)
