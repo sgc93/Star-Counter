@@ -12,13 +12,12 @@ class StarCounterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GitHub Repo Star counter WebApp',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
         useMaterial3: true,
       ),
-      routes: {
-        '/homepage': (context) => const HomePage(),
-      },
+      home: const HomePage(),
     );
   }
 }
