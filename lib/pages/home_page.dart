@@ -8,6 +8,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String _repoName = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,11 +17,15 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _appTitle(),
-            ],
+          child: SizedBox(
+            width: 400,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _appTitle(),
+                _repoNameField(),
+              ],
+            ),
           ),
         ),
       ),
@@ -30,7 +36,23 @@ class _HomePageState extends State<HomePage> {
     return const Text('GitHub Repo Star Counter');
   }
 
-  _repoNameField() {}
+  Widget _repoNameField() {
+    return TextField(
+      decoration: const InputDecoration(
+        labelText: 'Enter a GitHub Repository',
+        hintText: 'flutter/flutter',
+      ),
+      onSubmitted: (value) {
+        setState(() {
+          onRepoNameSubmitted(value);
+        });
+      },
+    );
+  }
 
   _numOfStar() {}
+
+  void onRepoNameSubmitted(String repoName) {
+    _repoName = repoName;
+  }
 }
