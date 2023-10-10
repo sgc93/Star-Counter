@@ -92,7 +92,13 @@ class _StarCounterState extends State<StarCounter> {
       // if no repo name is entered
       return const SizedBox();
     } else {
-      return InfoCard(data: numberFormater.format(repository!.stargazersCount));
+      return Column(
+        children: [
+          InfoCard(data: numberFormater.format(repository!.stargazersCount)),
+          InfoCard(data: numberFormater.format(repository!.forksCount)),
+          InfoCard(data: numberFormater.format(repository!.stargazersCount))
+        ],
+      );
     }
   }
 }
