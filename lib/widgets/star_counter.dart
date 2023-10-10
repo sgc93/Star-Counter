@@ -94,9 +94,22 @@ class _StarCounterState extends State<StarCounter> {
     } else {
       return Column(
         children: [
-          InfoCard(data: numberFormater.format(repository!.stargazersCount)),
-          InfoCard(data: numberFormater.format(repository!.forksCount)),
-          InfoCard(data: numberFormater.format(repository!.stargazersCount))
+          InfoCard(
+            type: 'Stars',
+            data: numberFormater.format(repository!.stargazersCount),
+          ),
+          InfoCard(
+            type: 'Forks',
+            data: numberFormater.format(repository!.forksCount),
+          ),
+          InfoCard(
+            type: 'Subscribers',
+            data: numberFormater.format(repository!.subscribersCount),
+          ),
+          InfoCard(
+            type: 'Watchers',
+            data: numberFormater.format(repository!.watchersCount),
+          ),
         ],
       );
     }
