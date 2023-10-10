@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class InfoCard extends StatelessWidget {
+  final String type;
   final String data;
   const InfoCard({
     super.key,
+    required this.type,
     required this.data,
   });
 
@@ -19,7 +21,7 @@ class InfoCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(
-          'Stars $data',
+          '$type: $data',
           style: textStyle,
         ),
       ),
