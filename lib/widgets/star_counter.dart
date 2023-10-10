@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github/github.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:repo_star_counter/widgets/card.dart';
 
 class StarCounter extends StatefulWidget {
   // full repository name : pp_name/repo_name
@@ -72,11 +73,6 @@ class _StarCounterState extends State<StarCounter> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final textStyle = textTheme.bodyLarge!.apply(
-      color: const Color.fromRGBO(19, 80, 25, 1),
-      fontWeightDelta: 800,
-      fontSizeDelta: 20,
-    );
     final errorStyle = textTheme.bodySmall!.apply(
       color: const Color.fromARGB(255, 112, 0, 0),
       fontSizeDelta: 8,
@@ -96,10 +92,7 @@ class _StarCounterState extends State<StarCounter> {
       // if no repo name is entered
       return const SizedBox();
     } else {
-      return Text(
-        numberFormater.format(repository!.stargazersCount),
-        style: textStyle,
-      );
+      return InfoCard(data: numberFormater.format(repository!.stargazersCount));
     }
   }
 }
