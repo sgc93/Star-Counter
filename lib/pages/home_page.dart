@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'GitHub Repository Star Counter',
+            'GitHub Repository Details',
             style: TextStyle(
               color: Colors.white70,
               fontSize: 30,
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Text(
-            'A simplified flutter web app to count and display number of star of a given GitHub repositories.',
+            'A simplified flutter web app to fetch and display details of a given GitHub repository.',
             style: TextStyle(
               color: Colors.white60,
               fontSize: 15,
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _appTitle() {
     return Text(
-      'Count a Repo\'s Star',
+      'GitHub Repo Info',
       style: Theme.of(context).textTheme.headlineMedium!.apply(
           color: const Color.fromRGBO(33, 43, 66, 0.6), fontWeightDelta: 800),
     );
@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
           color: Color.fromRGBO(33, 43, 66, 1),
           fontWeight: FontWeight.w900,
         ),
-        hintText: 'flutter/flutter',
+        hintText: 'sgc93/TapTap',
       ),
       style: const TextStyle(
         color: Color.fromRGBO(33, 43, 66, 1),
