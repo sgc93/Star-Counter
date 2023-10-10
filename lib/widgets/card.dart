@@ -17,7 +17,7 @@ class InfoCard extends StatelessWidget {
     );
     return Card(
       child: Text(
-        data,
+        'Stars $data',
         style: textStyle,
       ),
     );
