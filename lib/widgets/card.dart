@@ -13,12 +13,15 @@ class InfoCard extends StatelessWidget {
     final textStyle = textTheme.bodyLarge!.apply(
       color: const Color.fromRGBO(19, 80, 25, 1),
       fontWeightDelta: 800,
-      fontSizeDelta: 20,
+      // fontSizeDelta: 16,
     );
     return Card(
-      child: Text(
-        'Stars $data',
-        style: textStyle,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          'Stars $data',
+          style: textStyle,
+        ),
       ),
     );
   }
