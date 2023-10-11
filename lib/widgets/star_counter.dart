@@ -95,15 +95,19 @@ class _StarCounterState extends State<StarCounter> {
       return Column(
         children: [
           InfoCard(
-            type: 'Description: ',
+            type: 'Description ',
             data: repository!.description,
           ),
           InfoCard(
-            type: 'Visibility: ',
+            type: 'Owner ',
+            data: repository!.owner!.login,
+          ),
+          InfoCard(
+            type: 'Visibility ',
             data: repository!.visibility!,
           ),
           InfoCard(
-            type: 'Language: ',
+            type: 'Language ',
             data: repository!.language,
           ),
           InfoCard(
@@ -115,7 +119,7 @@ class _StarCounterState extends State<StarCounter> {
             data: numberFormater.format(repository!.forksCount),
           ),
           InfoCard(
-            type: 'Opened Issues: ',
+            type: 'Opened Issues ',
             data: numberFormater.format(repository!.openIssuesCount),
           ),
           InfoCard(
