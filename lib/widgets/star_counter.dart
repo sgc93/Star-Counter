@@ -95,8 +95,12 @@ class _StarCounterState extends State<StarCounter> {
       return Column(
         children: [
           InfoCard(
-            type: 'Description',
+            type: 'Description: ',
             data: repository!.description,
+          ),
+          InfoCard(
+            type: 'Visibility: ',
+            data: repository!.visibility!,
           ),
           InfoCard(
             type: 'Stars',
