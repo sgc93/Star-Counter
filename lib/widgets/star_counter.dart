@@ -115,6 +115,10 @@ class _StarCounterState extends State<StarCounter> {
             data: numberFormater.format(repository!.forksCount),
           ),
           InfoCard(
+            type: 'Opened Issues: ',
+            data: numberFormater.format(repository!.openIssuesCount),
+          ),
+          InfoCard(
             type: 'Subscribers',
             data: numberFormater.format(repository!.subscribersCount),
           ),
