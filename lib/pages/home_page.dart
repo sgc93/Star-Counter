@@ -24,21 +24,27 @@ class _HomePageState extends State<HomePage> {
           _appDescription(),
           Align(
             alignment: Alignment.center,
-            child: Card(
-              color: const Color.fromRGBO(92, 125, 165, 1),
-              shadowColor: Colors.white54,
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                width: 400,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _appTitle(),
-                    _repoNameField(),
-                    _numOfStar(),
-                  ],
+            child: Column(
+              children: [
+                Card(
+                  color: const Color.fromRGBO(92, 125, 165, 1),
+                  shadowColor: Colors.white54,
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    width: 400,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _appTitle(),
+                        _repoNameField(),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
+                Card(
+                  child: _numOfStar(),
+                )
+              ],
             ),
           ),
           _githubRepoLink(),
