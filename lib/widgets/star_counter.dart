@@ -103,6 +103,10 @@ class _StarCounterState extends State<StarCounter> {
             data: repository!.visibility!,
           ),
           InfoCard(
+            type: 'Language: ',
+            data: repository!.language,
+          ),
+          InfoCard(
             type: 'Stars',
             data: numberFormater.format(repository!.stargazersCount),
           ),
