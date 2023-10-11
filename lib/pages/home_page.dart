@@ -17,38 +17,32 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(33, 43, 66, 1),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _appDescription(),
-          Align(
-            alignment: Alignment.center,
-            child: Column(
-              children: [
-                Card(
-                  color: const Color.fromRGBO(92, 125, 165, 1),
-                  shadowColor: Colors.white54,
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    width: 400,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        _appTitle(),
-                        _repoNameField(),
-                      ],
-                    ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _appDescription(),
+            Align(
+              alignment: Alignment.center,
+              child: Card(
+                child: Container(
+                  padding: const EdgeInsets.all(16.0),
+                  width: 400,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      _appTitle(),
+                      _repoNameField(),
+                      _numOfStar(),
+                    ],
                   ),
                 ),
-                Card(
-                  child: _numOfStar(),
-                )
-              ],
+              ),
             ),
-          ),
-          _githubRepoLink(),
-        ],
+            _githubRepoLink(),
+          ],
+        ),
       ),
     );
   }
